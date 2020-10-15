@@ -7,10 +7,10 @@ void __attribute__ ((noinline)) __attribute__((optimize("O1"))) delayMicrosecond
 {
     // call = 2 cycles + 2 to 4 cycles to init us(2 for constant delay, 4 for variable)
 
-    asm volatile ("nop\n\t"); // 1 cycle
-    asm volatile ("nop\n\t"); // 1 cycle
-    asm volatile ("nop\n\t"); // 1 cycle
-    asm volatile ("nop\n\t"); // 1 cycle
+    asm volatile ("nop\n\t"); // 1 cycle, for CALL
+    asm volatile ("nop\n\t"); // 1 cycle, for CALL
+    asm volatile ("nop\n\t"); // 1 cycle, for RET
+    asm volatile ("nop\n\t"); // 1 cycle, for RET
 
 #if F_CPU == 16000000L
     // for the 16 MHz clock on most Arduino boards
