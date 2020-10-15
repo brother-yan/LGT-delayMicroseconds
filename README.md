@@ -76,7 +76,7 @@ $013C  RET
 ```
 
 调用处的代码为：
-```
+```asm
 ; delayMicroseconds(1)。如果参数是变量，会编译成LDS
 LDI R24, $01
 LDI R25, $00
